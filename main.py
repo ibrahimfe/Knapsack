@@ -46,6 +46,17 @@ class TestKnapsackGreedy(unittest.TestCase):
         self.assertEqual(actual_result_greedy, expected_result, "Expected 17")
         self.assertEqual(actual_result_dynamic, expected_result, "Expected 17")
         self.assertEqual(actual_result_recurive, expected_result, "Expected 17")
+      
+    def test_challenging_case(self):
+        weights = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+        values = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
+        capacity = 10
+        expected_result = 34
+            
+        self.assertEqual(knapsack_greedy(weights, values, capacity), expected_result, "Expected 34")
+        self.assertEqual(dynamic_knapsack(weights, values, capacity), expected_result, "Expected 34")
+        self.assertEqual(knapsack_recursive_memoization(weights, values, capacity), expected_result, "Expected 34")
+    
 
 
 if __name__ == '__main__':
