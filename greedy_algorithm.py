@@ -12,8 +12,8 @@ def knapsack_greedy(weights, values, capacity):
         else:
             # If the weight of the current item exceeds the remaining capacity,
             # select the item that maximizes the value-to-weight ratio
-            max_ratio = float('inf')
-            for j in range(i+1, len(weights)):
+            max_ratio = float("inf")
+            for j in range(i + 1, len(weights)):
                 if weights[j] > capacity:
                     break
                 ratio = values[j] / weights[j]
